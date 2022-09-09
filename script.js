@@ -53,17 +53,17 @@ function moveSnake() {
       break;
   }
 
-  // check after head is moved
+  
   if (alive(head)) {
-    // draw head
+    
     $(".row:nth-child(" + head[0] + ") > .pixel:nth-child(" + head[1] + ")").addClass("snakePixel");
 
-    // draw rest of body loop
+    
     for (var i = 0; i < Snake.size; i++) {
       $(".row:nth-child(" + Snake.position[i][0] + ") > .pixel:nth-child(" + Snake.position[i][1] + ")").addClass("snakePixel");
     }
 
-    // if head touches food
+    
     if (head.every(function(e,i) {
       return e === Food.position[i];
     })) {
@@ -96,16 +96,16 @@ function generateFood() {
 function keyPress() {
     $(document).one("keydown", function(key) {
         switch(key.which) {
-            case 37: // left arrow
+            case 37: 
                 if (Snake.direction != "r") {Snake.direction = "l";}
                 break;
-            case 38: // up arrow
+            case 38: 
                 if (Snake.direction != "d") {Snake.direction = "u";}
                 break;
-            case 39: // right arrow
+            case 39: 
                 if (Snake.direction != "l") {Snake.direction = "r";}
                 break;
-            case 40: // down arrow
+            case 40: 
                 if (Snake.direction != "u") {Snake.direction = "d";}
                 break;
         }
@@ -125,15 +125,15 @@ function gameLoop() {
 }
 
 function alive(head) {
-  // head check
+  
   if (head[0] < 1 || head[0] > 40 || head[1] < 1 || head[1] > 40) {
     return false;
   }
-  // wall collision
+  
   if (Snake.position[0][0] < 1 || Snake.position[0][0] > 40 || Snake.position[0][1] < 1 || Snake.position[0][1] > 40) {
     return false;
   }
-  // self collision
+  
   for (var i = 1; i < Snake.size; i++) {
     if ((Snake.position[0]).every(function(element,index) {
       return element === Snake.position[i][index];
@@ -167,7 +167,7 @@ function gameOver() {
 }
 
 function startGame() {
-    // reset game settings
+    
     Snake.size = 3;
     Snake.position = [[20,20],[20,19],[20,18]];
     Snake.direction = "r";
@@ -176,7 +176,7 @@ function startGame() {
     gamePoints = 0;
     Food.present = false;
     
-    // start game
+    
     createBoard();
     $(".overlay").hide();
     gameLoop();
