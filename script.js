@@ -113,12 +113,15 @@ function keyPress() {
 }
 
 function gameLoop() {
+    var sound = document.getElementById('Audio2');
+    sound.play();
     setTimeout(function() {
         keyPress();
         generateFood();
         moveSnake();
         if (Snake.alive) {gameLoop(); }
     }, gameSpeed);
+    
 }
 
 function alive(head) {
@@ -142,8 +145,8 @@ function alive(head) {
 }
 
 function gameOver() {
-    var sound = document.getElementById('Audio');
-    sound.play()
+    var sound2 = document.getElementById('Audio2');
+    sound2.pause();
     Snake.alive = false;
     console.log("Game Over!");
     $(".overlay").show();
