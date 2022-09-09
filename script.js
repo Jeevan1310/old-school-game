@@ -12,7 +12,7 @@ $(document).ready(function () {
 });
 
 var Snake = {
-    position: [[20, 20], [20, 19], [20, 18]], // snake start position
+    position: [[20, 20], [20, 19], [20, 18]], 
     size: 3,
     direction: "r",
     alive: true
@@ -142,6 +142,8 @@ function alive(head) {
 }
 
 function gameOver() {
+    var sound = document.getElementById('Audio');
+    sound.play()
     Snake.alive = false;
     console.log("Game Over!");
     $(".overlay").show();
