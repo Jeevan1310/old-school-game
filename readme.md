@@ -5,3 +5,5 @@
 https://jeevan1310.github.io/old-school-game/
 
 ## about the authour
+
+Repo Owner - @jeevan1310
