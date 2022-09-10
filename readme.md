@@ -3,3 +3,5 @@
 # demo url 
 
 https://jeevan1310.github.io/old-school-game/
+
+## about the authour
