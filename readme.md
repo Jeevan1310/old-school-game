@@ -9,3 +9,6 @@ https://jeevan1310.github.io/old-school-game/
 Repo Owner - @jeevan1310
 
 BCA Student
+
+## about the repository
+
