@@ -12,3 +12,5 @@ BCA Student
 
 ## about the repository
 
+Its a simple Game Built using javascript for Time pass
+
